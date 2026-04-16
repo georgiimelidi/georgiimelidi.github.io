@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects – Georgii Melidi</title>
+    <meta name="description" content="Personal projects by Georgii Melidi in machine learning, reinforcement learning, and interactive systems.">
+    <meta name="author" content="Georgii Melidi">
+    <link rel="icon" href="/favicon.ico">
+
+    <style>
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333;
+            --header-footer-bg: #f4f4f4;
+            --nav-bg: #0056b3;
+            --nav-text-color: white;
+            --link-color: #0056b3;
+            --card-bg: #fafafa;
+            --border-color: #ddd;
+        }
+
+        .dark-theme {
+            --background-color: #121212;
+            --text-color: #e0e0e0;
+            --header-footer-bg: #333;
+            --nav-bg: #1a73e8;
+            --nav-text-color: #e0e0e0;
+            --link-color: #FFD700;
+            --card-bg: #1b1b1b;
+            --border-color: #444;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            background-color: var(--header-footer-bg);
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--nav-bg);
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: var(--nav-text-color);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+
+        .language-switch {
+            text-align: right;
+            margin: 10px 20px 0 0;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.2em;
+            margin-bottom: 2em;
+        }
+
+        .project-image {
+            width: 100%;
+            max-width: 820px;
+            height: auto;
+            display: block;
+            margin: 1em auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .project-links {
+            margin-top: 0.8em;
+        }
+
+        .project-links a {
+            margin-right: 18px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .project-subtitle {
+            margin-top: -5px;
+            margin-bottom: 12px;
+        }
+
+        @media (max-width: 768px) {
+            header, footer {
+                padding: 0.5em;
+                text-align: left;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px 0;
+                text-align: left;
+            }
+
+            main {
+                padding: 0.7em;
+            }
+
+            .language-switch {
+                text-align: left;
+                margin: 10px;
+            }
+        }
+    </style>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+            const themeIcon = document.getElementById("theme-icon");
+            themeIcon.textContent = document.body.classList.contains("dark-theme") ? "🌞" : "🌙";
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Projects</h1>
+    <p>Applied machine learning, reinforcement learning, and interactive software systems</p>
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="files/CV_Georgii_Melidi.pdf">CV</a> |
+        <a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&hl=en&oi=ao" target="_blank">Google Scholar</a> |
+        <a href="https://github.com/georgiimelidi" target="_blank">GitHub</a>
+    </p>
+</header>
+
+<div class="language-switch">
+    <button onclick="toggleTheme()" id="theme-icon" style="font-size: 1.2em; background: none; border: none; cursor: pointer;">🌙</button>
+</div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="#projects-list">Project List</a>
+</nav>
+
+<main>
+    <section>
+        <h2>Overview</h2>
+        <p>
+            This page presents selected personal projects in machine learning, reinforcement learning,
+            and algorithmic decision-making. These projects complement my research profile by emphasizing
+            implementation, experimentation, and interactive systems.
+        </p>
+    </section>
+
+    <section id="projects-list">
+        <h2>Selected Projects</h2>
+
+        <div class="project-card">
+            <h3>Guess What AI Thinks</h3>
+            <p class="project-subtitle">
+                A small game built on top of an image classification model.
+            </p>
+
+            <img src="assets/guess-what-ai-thinks.png" alt="Guess What AI Thinks application screenshot" class="project-image">
+
+            <p>
+                This project turns an image classification model into a small interactive game, where the player tries to guess what the model will predict for a given image.
+                The goal was to take a standard image classification setup and turn it into something interactive.
+            </p>
+
+            <p>
+                Under the hood, the game uses SigLIP (google/siglip2-base-patch16-224). Instead of fixed classes,
+                I define a custom set of labels for each image pack. The model scores each label against the image,
+                the scores are converted into probabilities, and the game shows the top predictions.
+            </p>
+
+            <ul>
+                <li>Image classification using SigLIP</li>
+                <li>Custom label sets instead of fixed classes</li>
+                <li>Scores converted to probabilities for ranking</li>
+                <li>Interactive Streamlit app</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="https://github.com/georgiimelidi/guess-what-ai-thinks" target="_blank">GitHub</a>
+                <a href="https://guess-what-ai-thinks.streamlit.app/" target="_blank">Live Demo</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>Tiny Robot Playground</h3>
+            <p class="project-subtitle">
+                A  robot navigation playground to compare different decision strategies.
+            </p>
+
+            <img src="assets/tiny-robot.gif" alt="Tiny Robot Playground animated demonstration" class="project-image">
+
+            <p>
+                This project is about a small idea: put a robot in a grid and see how different approaches get it to the goal.
+                The task is straightforward, but the behavior of the policies is very different.
+            </p>
+
+            <p>
+                The robot moves in a 2D grid with randomly generated obstacles, and the target is always reachable.
+                You can control the difficulty by changing the grid size, obstacle density, or how far the target is.
+            </p>
+
+            <ul>
+                <li><strong>Smart Random:</strong> moves randomly but avoids going back immediately</li>
+                <li><strong>Optimal Path (BFS):</strong> sees the full grid and follows the shortest path</li>
+                <li><strong>Neural Policy:</strong> only sees locally and is trained via imitation learning (PyTorch)</li>
+            </ul>
+
+            <p>
+                All policies run on the same grid, so it is easy to compare them using success rate, number of steps,
+                collisions, and reward. The differences become very clear when you watch them side by side.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/georgiimelidi/tiny-robot-playground" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <h3>RL Dynamic Pricing</h3>
+            <p class="project-subtitle">
+                A reinforcement learning project for pricing under uncertain demand.
+            </p>
+
+            <img src="assets/policy_comparison.gif" alt="RL Dynamic Pricing project visualization" class="project-image">
+
+            <p>
+                This project simulates a simple e-commerce setting where a seller needs to set prices over time.
+                At each step, customers arrive randomly, decide whether to buy depending on the price, and the goal
+                is to maximize total revenue before inventory runs out.
+            </p>
+
+            <p>
+                The environment includes time-varying demand (Poisson arrivals), price-dependent conversion
+                (modeled with a sigmoid), and stochastic sales. This makes the problem sequential and uncertain,
+                which is where reinforcement learning becomes useful.
+            </p>
+
+            <ul>
+                <li>Custom simulator with stochastic demand and limited inventory</li>
+                <li>Deep Q-Network (DQN) for learning pricing policies</li>
+                <li>Discrete action space (price grid)</li>
+                <li>Comparison with fixed-price and heuristic baselines</li>
+            </ul>
+
+            <p>
+                In experiments, the learned policy consistently outperforms all baselines by finding a better
+                trade-off between price and conversion. For example, over 50 evaluation episodes, the DQN policy achieves around 678 mean revenue,
+                compared to 625 for a fixed-price baseline.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/georgiimelidi/rl-dynamic-pricing" target="_blank">GitHub</a>
+            </div>
+        </div>
+
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024–2026 Georgii Melidi</p>
+</footer>
+
+</body>
+</html>
