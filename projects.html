@@ -153,7 +153,7 @@
 
 <header>
     <h1>Projects</h1>
-    <p>Applied machine learning, reinforcement learning, and interactive software systems</p>
+    <p>Applied machine learning, reinforcement learning, sports analytics, and interactive software systems</p>
     <p>
         <a href="index.html">Home</a> |
         <a href="files/CV_Georgii_Melidi.pdf">CV</a> |
@@ -176,13 +176,45 @@
         <h2>Overview</h2>
         <p>
             This page presents selected personal projects in machine learning, reinforcement learning,
-            and algorithmic decision-making. These projects complement my research profile by emphasizing
-            implementation, experimentation, and interactive systems.
+            sports analytics, and algorithmic decision-making. These projects complement my research profile
+            by emphasizing implementation, experimentation, and interactive systems.
         </p>
     </section>
 
     <section id="projects-list">
         <h2>Selected Projects</h2>
+
+        <div class="project-card">
+            <h3>CourtSense AI</h3>
+            <p class="project-subtitle">
+                A tennis match prediction and tournament simulation system.
+            </p>
+
+            <img src="assets/RG26_prediction.jpeg" alt="CourtSense AI Roland-Garros simulation" class="project-image">
+
+            <p>
+                CourtSense AI is a machine learning project for ATP tennis match prediction.
+                It combines an XGBoost model with Elo ratings, historical match retrieval, and contextual agent analysis.
+            </p>
+
+            <p>
+                The system predicts match win probabilities, explains the result using contextual signals,
+                and simulates a Roland-Garros tournament path from the official draw.
+            </p>
+
+            <ul>
+                <li>XGBoost model trained on historical ATP matches</li>
+                <li>Overall and surface-specific Elo ratings</li>
+                <li>Historical match retrieval using cosine similarity</li>
+                <li>Contextual agents for head-to-head, fatigue, matchup, news, and uncertainty analysis</li>
+                <li>Interactive Streamlit app with match prediction and tournament simulation</li>
+            </ul>
+
+            <div class="project-links">
+                <a href="https://github.com/georgiimelidi/courtsense-ai" target="_blank">GitHub</a>
+                <!-- Add Live Demo link later if deployed -->
+            </div>
+        </div>
 
         <div class="project-card">
             <h3>Guess What AI Thinks</h3>
