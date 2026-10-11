@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проекты — Георгий Мелиди</title>
+  <meta name="description" content="Личные проекты по машинному обучению, обучению с подкреплением, спортивной аналитике и интерактивному ИИ.">
+  <meta name="author" content="Георгий Мелиди">
+  <link rel="canonical" href="https://gmelidi.com/ru/projects.html">
+  <meta property="og:title" content="Проекты — Георгий Мелиди">
+  <meta property="og:description" content="Личные проекты по машинному обучению, обучению с подкреплением, спортивной аналитике и интерактивному ИИ.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gmelidi.com/ru/projects.html">
+  <meta property="og:image" content="https://gmelidi.com/profile_pic.jpg">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../theme.js"></script>
+  <script src="../project-demos.js" defer></script>
+  <link rel="alternate" hreflang="en" href="https://gmelidi.com/projects.html">
+  <link rel="alternate" hreflang="fr" href="https://gmelidi.com/fr/projects.html">
+  <link rel="alternate" hreflang="ru" href="https://gmelidi.com/ru/projects.html">
+  <link rel="alternate" hreflang="x-default" href="https://gmelidi.com/projects.html">
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Георгий Мелиди</a>
+    <nav class="nav" aria-label="Главное меню">
+      <a href="index.html#publications">Исследования</a>
+      <a href="projects.html" aria-current="page">Проекты</a>
+      <a href="index.html#experience">Опыт</a>
+      <a href="index.html#about">Обо мне</a>
+      <a href="../files/CV_Georgii_Melidi.pdf">CV (EN)</a>
+    </nav>
+    <div class="header-controls">
+      <details class="language-menu">
+        <summary aria-label="Выбрать язык">RU</summary>
+        <nav class="language-nav" aria-label="Язык"><a href="../projects.html" lang="en" hreflang="en">English</a><a href="../fr/projects.html" lang="fr" hreflang="fr">Français</a><a href="projects.html" lang="ru" hreflang="ru" aria-current="page">Русский</a></nav>
+      </details>
+      <button class="theme-toggle" type="button" aria-label="Сменить тему">🌙</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero"><div class="container page-intro">
+  <h1>Личные проекты</h1>
+  <p>Несколько проектов, которыми я занимаюсь помимо исследований: прогнозы теннисных матчей, эксперименты с ценообразованием и небольшие интерактивные игры. Ниже — описания, код и демо.</p>
+  <nav class="project-jump" aria-label="Навигация по проектам"><a href="#courtsense-ai">CourtSense AI</a><a href="#guess-what-ai-thinks">Guess What AI Thinks</a><a href="#tiny-robot">Tiny Robot</a><a href="#rl-dynamic-pricing">Ценообразование</a></nav>
+</div></div>
+<main class="container" id="main"><section id="projects-list" aria-label="Описания проектов">
+<article class="project-card" id="courtsense-ai"><span class="tag">Машинное обучение · Спортивная аналитика</span>
+            <h2>CourtSense AI</h2>
+            <p class="project-subtitle">
+                Система прогнозирования теннисных матчей и симуляции турниров.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/courtsense-ai">GitHub</a>
+                
+            </div>
+
+            <img src="../assets/demo_match_pred.jpeg" alt="Интерфейс CourtSense AI с прогнозом теннисного матча и анализом контекста" class="project-image" width="1280" height="731" loading="lazy" decoding="async">
+
+            <p>
+                CourtSense AI — проект по прогнозированию результатов матчей ATP с помощью машинного обучения. Он объединяет модель XGBoost, рейтинги Elo, поиск похожих матчей в истории и анализ контекста с помощью агентов.
+            </p>
+
+            <p>
+                Система оценивает вероятность победы, объясняет прогноз с учётом контекста и моделирует ход Roland-Garros на основе официальной турнирной сетки.
+            </p>
+
+            <ul>
+                <li>Модель XGBoost, обученная на истории матчей ATP</li>
+                <li>Общий рейтинг Elo и отдельные рейтинги по покрытиям</li>
+                <li>Поиск похожих матчей по косинусному сходству</li>
+                <li>Агенты для анализа личных встреч, усталости, особенностей соперников, новостей и неопределённости</li>
+                <li>Интерактивное приложение на Streamlit с прогнозами матчей и симуляцией турниров</li>
+            </ul>
+
+            </article>
+<article class="project-card" id="guess-what-ai-thinks"><span class="tag">Компьютерное зрение · Интерактивный ИИ</span>
+            <h2>Guess What AI Thinks</h2>
+            <p class="project-subtitle">
+                Небольшая игра на основе модели классификации изображений.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/guess-what-ai-thinks">GitHub</a>
+                <a class="button" href="https://guess-what-ai-thinks.streamlit.app/">Попробовать</a>
+            </div>
+
+            <div class="project-demo">
+              <img id="guess-what-ai-thinks-preview" src="../assets/guess-what-ai-thinks-preview.webp" alt="Скриншот игры Guess What AI Thinks" class="project-image" width="800" height="963" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="guess-what-ai-thinks-preview" aria-pressed="false" data-poster="../assets/guess-what-ai-thinks-preview.webp" data-animation="../assets/demo_guess-what-ai-thinks.gif" hidden>Запустить анимацию</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="../assets/demo_guess-what-ai-thinks.gif">Посмотреть анимацию</a></noscript>
+            </div>
+
+            <p>
+                В этой игре нужно угадать, какой ответ модель даст для показанного изображения. Мне хотелось превратить обычную задачу классификации изображений в интерактивную игру.
+            </p>
+
+            <p>
+                Игра использует SigLIP (google/siglip2-base-patch16-224). Вместо фиксированных классов я задаю собственный набор меток для каждого набора изображений. Модель оценивает, насколько каждая метка соответствует изображению, оценки преобразуются в вероятности, а игра показывает наиболее вероятные ответы.
+            </p>
+
+            <ul>
+                <li>Классификация изображений с помощью SigLIP</li>
+                <li>Собственные наборы меток вместо фиксированных классов</li>
+                <li>Преобразование оценок в вероятности для ранжирования</li>
+                <li>Интерактивное приложение на Streamlit</li>
+            </ul>
+
+            </article>
+<article class="project-card" id="tiny-robot"><span class="tag">Обучение по примерам · Планирование</span>
+            <h2>Tiny Robot Playground</h2>
+            <p class="project-subtitle">
+                Среда навигации робота для сравнения разных стратегий принятия решений.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/tiny-robot-playground">GitHub</a>
+            </div>
+
+            <div class="project-demo">
+              <img id="tiny-robot-preview" src="../assets/tiny-robot-preview.webp" alt="Демонстрация Tiny Robot Playground" class="project-image" width="880" height="960" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="tiny-robot-preview" aria-pressed="false" data-poster="../assets/tiny-robot-preview.webp" data-animation="../assets/tiny-robot.gif" hidden>Запустить анимацию</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="../assets/tiny-robot.gif">Посмотреть анимацию</a></noscript>
+            </div>
+
+            <p>
+                Идея простая: поместить робота на клетчатое поле и посмотреть, как разные алгоритмы приведут его к цели. Задача одна, но стратегии ведут себя совершенно по-разному.
+            </p>
+
+            <p>
+                Робот движется по двумерной сетке со случайными препятствиями, причём путь до цели всегда существует. Сложность можно менять через размер поля, плотность препятствий и расстояние до цели.
+            </p>
+
+            <ul>
+                <li><strong>Smart Random:</strong> двигается случайно, но старается не возвращаться сразу на предыдущую клетку</li>
+                <li><strong>Оптимальный путь (BFS):</strong> видит всё поле и следует по кратчайшему пути</li>
+                <li><strong>Нейросетевая стратегия:</strong> видит только ближайшее окружение и обучается по примерам (PyTorch)</li>
+            </ul>
+
+            <p>
+                Все стратегии работают на одном поле, поэтому их удобно сравнивать по доле успешных попыток, числу шагов, столкновениям и награде. Разница особенно заметна, когда наблюдаешь за ними одновременно.
+            </p>
+
+            </article>
+<article class="project-card" id="rl-dynamic-pricing"><span class="tag">Обучение с подкреплением · Оптимизация</span>
+            <h2>RL Dynamic Pricing</h2>
+            <p class="project-subtitle">
+                Проект по обучению с подкреплением для последовательного выбора цен при неопределённом спросе.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/rl-dynamic-pricing">GitHub</a>
+            </div>
+
+            <div class="project-demo">
+              <img id="rl-dynamic-pricing-preview" src="../assets/rl-dynamic-pricing-preview.webp" alt="Визуализация проекта RL Dynamic Pricing" class="project-image" width="880" height="940" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="rl-dynamic-pricing-preview" aria-pressed="false" data-poster="../assets/rl-dynamic-pricing-preview.webp" data-animation="../assets/policy_comparison.gif" hidden>Запустить анимацию</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="../assets/policy_comparison.gif">Посмотреть анимацию</a></noscript>
+            </div>
+
+            <p>
+                Проект моделирует простой интернет-магазин, в котором продавец меняет цены со временем. На каждом шаге случайным образом приходят покупатели и решают, покупать ли товар, в зависимости от цены. Цель — получить как можно большую выручку, пока не закончится запас товара.
+            </p>
+
+            <p>
+                В модели спрос меняется со временем: число покупателей задаётся процессом Пуассона, вероятность покупки зависит от цены через сигмоиду, а продажи случайны. Решения влияют на следующие шаги, поэтому здесь интересно попробовать обучение с подкреплением.
+            </p>
+
+            <ul>
+                <li>Собственный симулятор со случайным спросом и ограниченным запасом товара</li>
+                <li>Deep Q-Network (DQN) для обучения стратегии ценообразования</li>
+                <li>Дискретный набор действий — сетка цен</li>
+                <li>Сравнение с фиксированной ценой и эвристическими стратегиями</li>
+            </ul>
+
+            <p class="project-result"><strong>Средняя выручка примерно на 8,5% выше, чем при фиксированной цене.</strong><br>За 50 тестовых эпизодов в симуляторе DQN получил среднюю выручку около 678 против 625 у стратегии с фиксированной ценой. Эти результаты относятся к данной моделируемой среде.</p>
+
+            </article></section></main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Георгий Мелиди · Обновлено: <time datetime="2026-10-11">11 октября 2026</time></span>
+    <div class="footer-links">
+      <a href="mailto:georgii.melidi@gmail.com">Почта</a>
+      <a href="https://github.com/georgiimelidi">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&amp;hl=en">Scholar</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

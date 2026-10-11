@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projets — Georgii Melidi</title>
+  <meta name="description" content="Projets personnels en apprentissage automatique, apprentissage par renforcement, analyse sportive et IA interactive.">
+  <meta name="author" content="Georgii Melidi">
+  <link rel="canonical" href="https://gmelidi.com/fr/projects.html">
+  <meta property="og:title" content="Projets — Georgii Melidi">
+  <meta property="og:description" content="Projets personnels en apprentissage automatique, apprentissage par renforcement, analyse sportive et IA interactive.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gmelidi.com/fr/projects.html">
+  <meta property="og:image" content="https://gmelidi.com/profile_pic.jpg">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../theme.js"></script>
+  <script src="../project-demos.js" defer></script>
+  <link rel="alternate" hreflang="en" href="https://gmelidi.com/projects.html">
+  <link rel="alternate" hreflang="fr" href="https://gmelidi.com/fr/projects.html">
+  <link rel="alternate" hreflang="ru" href="https://gmelidi.com/ru/projects.html">
+  <link rel="alternate" hreflang="x-default" href="https://gmelidi.com/projects.html">
+</head>
+<body>
+<a class="skip-link" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Georgii Melidi</a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="index.html#publications">Recherche</a>
+      <a href="projects.html" aria-current="page">Projets</a>
+      <a href="index.html#experience">Expérience</a>
+      <a href="index.html#about">À propos</a>
+      <a href="../files/CV_Georgii_Melidi.pdf">CV (EN)</a>
+    </nav>
+    <div class="header-controls">
+      <details class="language-menu">
+        <summary aria-label="Choisir la langue">FR</summary>
+        <nav class="language-nav" aria-label="Langue"><a href="../projects.html" lang="en" hreflang="en">English</a><a href="projects.html" lang="fr" hreflang="fr" aria-current="page">Français</a><a href="../ru/projects.html" lang="ru" hreflang="ru">Русский</a></nav>
+      </details>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">🌙</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero"><div class="container page-intro">
+  <h1>Projets personnels</h1>
+  <p>Quelques projets sur lesquels je travaille en dehors de mes recherches : prédire des matchs de tennis, expérimenter avec les prix et créer de petits jeux interactifs. Vous trouverez le code et les démos ci-dessous.</p>
+  <nav class="project-jump" aria-label="Navigation entre les projets"><a href="#courtsense-ai">CourtSense AI</a><a href="#guess-what-ai-thinks">Guess What AI Thinks</a><a href="#tiny-robot">Tiny Robot</a><a href="#rl-dynamic-pricing">Tarification dynamique</a></nav>
+</div></div>
+<main class="container" id="main"><section id="projects-list" aria-label="Présentation des projets">
+<article class="project-card" id="courtsense-ai"><span class="tag">Apprentissage automatique · Analyse sportive</span>
+            <h2>CourtSense AI</h2>
+            <p class="project-subtitle">
+                Un système de prédiction de matchs de tennis et de simulation de tournois.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/courtsense-ai">GitHub</a>
+                
+            </div>
+
+            <img src="../assets/demo_match_pred.jpeg" alt="Interface de CourtSense AI avec une prédiction de match de tennis et une analyse du contexte" class="project-image" width="1280" height="731" loading="lazy" decoding="async">
+
+            <p>
+                CourtSense AI est un projet d’apprentissage automatique pour prédire les résultats des matchs ATP. Il combine un modèle XGBoost, les classements Elo, la recherche de matchs similaires dans l’historique et des agents d’analyse du contexte.
+            </p>
+
+            <p>
+                Le système estime les probabilités de victoire, explique ses prédictions à partir d’éléments de contexte et simule le déroulement de Roland-Garros à partir du tableau officiel.
+            </p>
+
+            <ul>
+                <li>Modèle XGBoost entraîné sur l’historique des matchs ATP</li>
+                <li>Classements Elo globaux et par surface</li>
+                <li>Recherche de matchs similaires par similarité cosinus</li>
+                <li>Agents d’analyse des confrontations directes, de la fatigue, des profils des adversaires, de l’actualité et de l’incertitude</li>
+                <li>Application Streamlit interactive pour prédire des matchs et simuler des tournois</li>
+            </ul>
+
+            </article>
+<article class="project-card" id="guess-what-ai-thinks"><span class="tag">Vision par ordinateur · IA interactive</span>
+            <h2>Guess What AI Thinks</h2>
+            <p class="project-subtitle">
+                Un petit jeu construit autour d’un modèle de classification d’images.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/guess-what-ai-thinks">GitHub</a>
+                <a class="button" href="https://guess-what-ai-thinks.streamlit.app/">Essayer la démo</a>
+            </div>
+
+            <div class="project-demo">
+              <img id="guess-what-ai-thinks-preview" src="../assets/guess-what-ai-thinks-preview.webp" alt="Capture du jeu Guess What AI Thinks" class="project-image" width="800" height="963" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="guess-what-ai-thinks-preview" aria-pressed="false" data-poster="../assets/guess-what-ai-thinks-preview.webp" data-animation="../assets/demo_guess-what-ai-thinks.gif" hidden>Lancer l’animation</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="../assets/demo_guess-what-ai-thinks.gif">Voir l’animation</a></noscript>
+            </div>
+
+            <p>
+                Dans ce jeu, le joueur essaie de deviner ce qu’un modèle va prédire pour une image donnée. Je voulais transformer une tâche classique de classification d’images en quelque chose d’interactif.
+            </p>
+
+            <p>
+                Le jeu utilise SigLIP (google/siglip2-base-patch16-224). Au lieu de classes fixes, je définis un ensemble d’étiquettes pour chaque lot d’images. Le modèle évalue la correspondance entre chaque étiquette et l’image ; ces scores sont convertis en probabilités, puis le jeu affiche les prédictions les mieux classées.
+            </p>
+
+            <ul>
+                <li>Classification d’images avec SigLIP</li>
+                <li>Ensembles d’étiquettes personnalisés plutôt que classes fixes</li>
+                <li>Conversion des scores en probabilités pour le classement</li>
+                <li>Application Streamlit interactive</li>
+            </ul>
+
+            </article>
+<article class="project-card" id="tiny-robot"><span class="tag">Apprentissage par imitation · Planification</span>
+            <h2>Tiny Robot Playground</h2>
+            <p class="project-subtitle">
+                Un environnement de navigation pour comparer différentes stratégies de décision d’un robot.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/tiny-robot-playground">GitHub</a>
+            </div>
+
+            <div class="project-demo">
+              <img id="tiny-robot-preview" src="../assets/tiny-robot-preview.webp" alt="Démonstration de Tiny Robot Playground" class="project-image" width="880" height="960" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="tiny-robot-preview" aria-pressed="false" data-poster="../assets/tiny-robot-preview.webp" data-animation="../assets/tiny-robot.gif" hidden>Lancer l’animation</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="../assets/tiny-robot.gif">Voir l’animation</a></noscript>
+            </div>
+
+            <p>
+                L’idée est simple : placer un robot sur une grille et observer comment différentes méthodes le conduisent à son objectif. La tâche est la même, mais les stratégies se comportent très différemment.
+            </p>
+
+            <p>
+                Le robot se déplace sur une grille 2D avec des obstacles générés aléatoirement, et l’objectif reste toujours accessible. On peut régler la difficulté en modifiant la taille de la grille, la densité des obstacles ou la distance à l’objectif.
+            </p>
+
+            <ul>
+                <li><strong>Smart Random :</strong> se déplace au hasard, mais évite de revenir immédiatement sur ses pas</li>
+                <li><strong>Chemin optimal (BFS) :</strong> voit toute la grille et suit le chemin le plus court</li>
+                <li><strong>Stratégie neuronale :</strong> ne voit que son environnement proche et apprend par imitation (PyTorch)</li>
+            </ul>
+
+            <p>
+                Toutes les stratégies évoluent sur la même grille. On peut ainsi comparer leur taux de réussite, le nombre de pas, les collisions et la récompense. Les différences sautent aux yeux lorsqu’on les observe côte à côte.
+            </p>
+
+            </article>
+<article class="project-card" id="rl-dynamic-pricing"><span class="tag">Apprentissage par renforcement · Optimisation</span>
+            <h2>RL Dynamic Pricing</h2>
+            <p class="project-subtitle">
+                Un projet d’apprentissage par renforcement pour ajuster les prix au fil du temps lorsque la demande est incertaine.
+            </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/rl-dynamic-pricing">GitHub</a>
+            </div>
+
+            <div class="project-demo">
+              <img id="rl-dynamic-pricing-preview" src="../assets/rl-dynamic-pricing-preview.webp" alt="Visualisation du projet RL Dynamic Pricing" class="project-image" width="880" height="940" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="rl-dynamic-pricing-preview" aria-pressed="false" data-poster="../assets/rl-dynamic-pricing-preview.webp" data-animation="../assets/policy_comparison.gif" hidden>Lancer l’animation</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="../assets/policy_comparison.gif">Voir l’animation</a></noscript>
+            </div>
+
+            <p>
+                Ce projet simule une boutique en ligne dans laquelle le vendeur ajuste ses prix au fil du temps. À chaque étape, des clients arrivent de façon aléatoire et décident d’acheter ou non en fonction du prix. L’objectif est de maximiser le chiffre d’affaires avant l’épuisement du stock.
+            </p>
+
+            <p>
+                La demande varie au fil du temps : les arrivées suivent un processus de Poisson, la probabilité d’achat dépend du prix via une sigmoïde, et les ventes sont aléatoires. Les décisions influencent les étapes suivantes, ce qui en fait un cadre intéressant pour l’apprentissage par renforcement.
+            </p>
+
+            <ul>
+                <li>Simulateur de demande aléatoire avec un stock limité</li>
+                <li>Deep Q-Network (DQN) pour apprendre une stratégie de tarification</li>
+                <li>Espace d’actions discret : une grille de prix</li>
+                <li>Comparaison avec un prix fixe et des stratégies heuristiques</li>
+            </ul>
+
+            <p class="project-result"><strong>Un chiffre d’affaires moyen supérieur d’environ 8,5 % à celui obtenu avec un prix fixe.</strong><br>Sur 50 épisodes d’évaluation dans le simulateur, le DQN a obtenu un chiffre d’affaires moyen d’environ 678, contre 625 avec un prix fixe. Ces résultats concernent cet environnement simulé.</p>
+
+            </article></section></main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Georgii Melidi · Mise à jour : <time datetime="2026-10-11">11 octobre 2026</time></span>
+    <div class="footer-links">
+      <a href="mailto:georgii.melidi@gmail.com">Courriel</a>
+      <a href="https://github.com/georgiimelidi">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&amp;hl=en">Scholar</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <url>
-      <loc>https://gmelidi.com/</loc>
-   </url>
+  <url><loc>https://gmelidi.com/</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://gmelidi.com/projects.html</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://gmelidi.com/fr/</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://gmelidi.com/fr/projects.html</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://gmelidi.com/ru/</loc><lastmod>2026-10-11</lastmod></url>
+  <url><loc>https://gmelidi.com/ru/projects.html</loc><lastmod>2026-10-11</lastmod></url>
 </urlset>

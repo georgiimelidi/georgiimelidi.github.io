@@ -1,196 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects – Georgii Melidi</title>
-    <meta name="description" content="Personal projects by Georgii Melidi in machine learning, reinforcement learning, and interactive systems.">
-    <meta name="author" content="Georgii Melidi">
-    <link rel="icon" href="/favicon.ico">
-
-    <style>
-        :root {
-            --background-color: #ffffff;
-            --text-color: #333;
-            --header-footer-bg: #f4f4f4;
-            --nav-bg: #0056b3;
-            --nav-text-color: white;
-            --link-color: #0056b3;
-            --card-bg: #fafafa;
-            --border-color: #ddd;
-        }
-
-        .dark-theme {
-            --background-color: #121212;
-            --text-color: #e0e0e0;
-            --header-footer-bg: #333;
-            --nav-bg: #1a73e8;
-            --nav-text-color: #e0e0e0;
-            --link-color: #FFD700;
-            --card-bg: #1b1b1b;
-            --border-color: #444;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-family: monospace;
-            margin: 0;
-            padding: 0;
-        }
-
-        header, footer {
-            background-color: var(--header-footer-bg);
-            padding: 1em;
-            text-align: center;
-        }
-
-        nav {
-            background-color: var(--nav-bg);
-            padding: 0.5em;
-            text-align: center;
-        }
-
-        nav a {
-            color: var(--nav-text-color);
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 1em;
-        }
-
-        h1, h2, h3 {
-            color: #0056b3;
-        }
-
-        .language-switch {
-            text-align: right;
-            margin: 10px 20px 0 0;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 1.2em;
-            margin-bottom: 2em;
-        }
-
-        .project-image {
-            width: 100%;
-            max-width: 820px;
-            height: auto;
-            display: block;
-            margin: 1em auto;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .project-links {
-            margin-top: 0.8em;
-        }
-
-        .project-links a {
-            margin-right: 18px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        .project-subtitle {
-            margin-top: -5px;
-            margin-bottom: 12px;
-        }
-
-        @media (max-width: 768px) {
-            header, footer {
-                padding: 0.5em;
-                text-align: left;
-            }
-
-            nav a {
-                display: block;
-                margin: 10px 0;
-                text-align: left;
-            }
-
-            main {
-                padding: 0.7em;
-            }
-
-            .language-switch {
-                text-align: left;
-                margin: 10px;
-            }
-        }
-    </style>
-
-    <script>
-        function toggleTheme() {
-            document.body.classList.toggle("dark-theme");
-            const themeIcon = document.getElementById("theme-icon");
-            themeIcon.textContent = document.body.classList.contains("dark-theme") ? "🌞" : "🌙";
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Georgii Melidi</title>
+  <meta name="description" content="Applied projects in machine learning, reinforcement learning, sports analytics, and interactive AI.">
+  <meta name="author" content="Georgii Melidi">
+  <link rel="canonical" href="https://gmelidi.com/projects.html">
+  <meta property="og:title" content="Projects — Georgii Melidi">
+  <meta property="og:description" content="Applied projects in machine learning, reinforcement learning, sports analytics, and interactive AI.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gmelidi.com/projects.html">
+  <meta property="og:image" content="https://gmelidi.com/profile_pic.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+  <script src="project-demos.js" defer></script>
+  <link rel="alternate" hreflang="en" href="https://gmelidi.com/projects.html">
+  <link rel="alternate" hreflang="fr" href="https://gmelidi.com/fr/projects.html">
+  <link rel="alternate" hreflang="ru" href="https://gmelidi.com/ru/projects.html">
+  <link rel="alternate" hreflang="x-default" href="https://gmelidi.com/projects.html">
 </head>
 <body>
-
-<header>
-    <h1>Projects</h1>
-    <p>Applied machine learning, reinforcement learning, sports analytics, and interactive software systems</p>
-    <p>
-        <a href="index.html">Home</a> |
-        <a href="files/CV_Georgii_Melidi.pdf">CV</a> |
-        <a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&hl=en&oi=ao" target="_blank">Google Scholar</a> |
-        <a href="https://github.com/georgiimelidi" target="_blank">GitHub</a>
-    </p>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">Georgii Melidi</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html#publications">Research</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#about">About</a>
+      <a href="files/CV_Georgii_Melidi.pdf">CV</a>
+    </nav>
+    <div class="header-controls">
+      <details class="language-menu">
+        <summary aria-label="Choose language">EN</summary>
+        <nav class="language-nav" aria-label="Language"><a href="projects.html" lang="en" hreflang="en" aria-current="page">English</a><a href="fr/projects.html" lang="fr" hreflang="fr">Français</a><a href="ru/projects.html" lang="ru" hreflang="ru">Русский</a></nav>
+      </details>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">🌙</button>
+    </div>
+  </div>
 </header>
 
-<div class="language-switch">
-    <button onclick="toggleTheme()" id="theme-icon" style="font-size: 1.2em; background: none; border: none; cursor: pointer;">🌙</button>
-</div>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="#projects-list">Project List</a>
-</nav>
-
-<main>
-    <section>
-        <h2>Overview</h2>
-        <p>
-            This page presents selected personal projects in machine learning, reinforcement learning,
-            sports analytics, and algorithmic decision-making. These projects complement my research profile
-            by emphasizing implementation, experimentation, and interactive systems.
-        </p>
-    </section>
-
-    <section id="projects-list">
-        <h2>Selected Projects</h2>
-
-        <div class="project-card">
-            <h3>CourtSense AI</h3>
+<div class="hero"><div class="container page-intro">
+  <h1>Personal projects</h1>
+  <p>A few things I’ve been working on outside my research: predicting tennis matches, experimenting with pricing, and making small interactive games. Code and demos are linked below.</p>
+  <nav class="project-jump" aria-label="Project navigation"><a href="#courtsense-ai">CourtSense AI</a><a href="#guess-what-ai-thinks">Guess What AI Thinks</a><a href="#tiny-robot">Tiny Robot</a><a href="#rl-dynamic-pricing">Dynamic Pricing</a></nav>
+</div></div>
+<main class="container" id="main"><section id="projects-list" aria-label="Project details">
+<article class="project-card" id="courtsense-ai"><span class="tag">Machine learning · Sports analytics</span>
+            <h2>CourtSense AI</h2>
             <p class="project-subtitle">
                 A tennis match prediction and tournament simulation system.
             </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/courtsense-ai">GitHub</a>
+                
+            </div>
 
-            <img src="assets/demo_match_pred.jpeg" alt="CourtSense AI" class="project-image">
+            <img src="assets/demo_match_pred.jpeg" alt="CourtSense AI interface showing a tennis match prediction and contextual analysis" class="project-image" width="1280" height="731" loading="lazy" decoding="async">
 
             <p>
                 CourtSense AI is a machine learning project for ATP tennis match prediction.
@@ -210,19 +79,23 @@
                 <li>Interactive Streamlit app with match prediction and tournament simulation</li>
             </ul>
 
-            <div class="project-links">
-                <a href="https://github.com/georgiimelidi/courtsense-ai" target="_blank">GitHub</a>
-                <!-- Add Live Demo link later if deployed -->
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>Guess What AI Thinks</h3>
+            </article>
+<article class="project-card" id="guess-what-ai-thinks"><span class="tag">Computer vision · Interactive AI</span>
+            <h2>Guess What AI Thinks</h2>
             <p class="project-subtitle">
                 A small game built on top of an image classification model.
             </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/guess-what-ai-thinks">GitHub</a>
+                <a class="button" href="https://guess-what-ai-thinks.streamlit.app/">Live Demo</a>
+            </div>
 
-            <img src="assets/demo_guess-what-ai-thinks.gif" alt="Guess What AI Thinks application screenshot" class="project-image">
+            <div class="project-demo">
+              <img id="guess-what-ai-thinks-preview" src="assets/guess-what-ai-thinks-preview.webp" alt="Guess What AI Thinks application screenshot" class="project-image" width="800" height="963" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="guess-what-ai-thinks-preview" aria-pressed="false" data-poster="assets/guess-what-ai-thinks-preview.webp" data-animation="assets/demo_guess-what-ai-thinks.gif" hidden>Play animated demo</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="assets/demo_guess-what-ai-thinks.gif">View animated demo</a></noscript>
+            </div>
 
             <p>
                 This project turns an image classification model into a small interactive game, where the player tries to guess what the model will predict for a given image.
@@ -242,19 +115,22 @@
                 <li>Interactive Streamlit app</li>
             </ul>
 
-            <div class="project-links">
-                <a href="https://github.com/georgiimelidi/guess-what-ai-thinks" target="_blank">GitHub</a>
-                <a href="https://guess-what-ai-thinks.streamlit.app/" target="_blank">Live Demo</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>Tiny Robot Playground</h3>
+            </article>
+<article class="project-card" id="tiny-robot"><span class="tag">Imitation learning · Planning</span>
+            <h2>Tiny Robot Playground</h2>
             <p class="project-subtitle">
                 A  robot navigation playground to compare different decision strategies.
             </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/tiny-robot-playground">GitHub</a>
+            </div>
 
-            <img src="assets/tiny-robot.gif" alt="Tiny Robot Playground animated demonstration" class="project-image">
+            <div class="project-demo">
+              <img id="tiny-robot-preview" src="assets/tiny-robot-preview.webp" alt="Tiny Robot Playground demonstration" class="project-image" width="880" height="960" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="tiny-robot-preview" aria-pressed="false" data-poster="assets/tiny-robot-preview.webp" data-animation="assets/tiny-robot.gif" hidden>Play animated demo</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="assets/tiny-robot.gif">View animated demo</a></noscript>
+            </div>
 
             <p>
                 This project is about a small idea: put a robot in a grid and see how different approaches get it to the goal.
@@ -277,18 +153,22 @@
                 collisions, and reward. The differences become very clear when you watch them side by side.
             </p>
 
-            <div class="project-links">
-                <a href="https://github.com/georgiimelidi/tiny-robot-playground" target="_blank">GitHub</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <h3>RL Dynamic Pricing</h3>
+            </article>
+<article class="project-card" id="rl-dynamic-pricing"><span class="tag">Reinforcement learning · Optimization</span>
+            <h2>RL Dynamic Pricing</h2>
             <p class="project-subtitle">
                 A reinforcement learning project for sequential pricing under uncertain demand.
             </p>
+<div class="project-links">
+                <a class="button" href="https://github.com/georgiimelidi/rl-dynamic-pricing">GitHub</a>
+            </div>
 
-            <img src="assets/policy_comparison.gif" alt="RL Dynamic Pricing project visualization" class="project-image">
+            <div class="project-demo">
+              <img id="rl-dynamic-pricing-preview" src="assets/rl-dynamic-pricing-preview.webp" alt="RL Dynamic Pricing project visualization" class="project-image" width="880" height="940" loading="lazy" decoding="async">
+              <button class="animation-toggle" type="button" aria-controls="rl-dynamic-pricing-preview" aria-pressed="false" data-poster="assets/rl-dynamic-pricing-preview.webp" data-animation="assets/policy_comparison.gif" hidden>Play animated demo</button>
+              <span class="animation-status" role="status"></span>
+              <noscript><a href="assets/policy_comparison.gif">View animated demo</a></noscript>
+            </div>
 
             <p>
                 This project simulates a simple e-commerce setting where a seller needs to set prices over time.
@@ -309,23 +189,18 @@
                 <li>Comparison with fixed-price and heuristic baselines</li>
             </ul>
 
-            <p>
-                In experiments, the learned policy consistently outperforms all baselines by finding a better
-                trade-off between price and conversion. For example, over 50 evaluation episodes, the DQN policy achieves around 678 mean revenue,
-                compared to 625 for a fixed-price baseline.
-            </p>
+            <p class="project-result"><strong>About 8.5% higher mean revenue than the fixed-price baseline.</strong><br>In the simulator, the DQN achieved around 678 mean revenue versus 625 for a fixed-price baseline over 50 evaluation episodes. These results describe this simulated setting.</p>
 
-            <div class="project-links">
-                <a href="https://github.com/georgiimelidi/rl-dynamic-pricing" target="_blank">GitHub</a>
-            </div>
-        </div>
-
-    </section>
-</main>
-
-<footer>
-    <p>&copy; 2024–2026 Georgii Melidi</p>
+            </article></section></main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Georgii Melidi · Updated: <time datetime="2026-10-11">11 October 2026</time></span>
+    <div class="footer-links">
+      <a href="mailto:georgii.melidi@gmail.com">Email</a>
+      <a href="https://github.com/georgiimelidi">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&amp;hl=en">Scholar</a>
+    </div>
+  </div>
 </footer>
-
 </body>
 </html>

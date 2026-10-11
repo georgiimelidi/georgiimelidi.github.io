@@ -1,434 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Georgii Melidi – Algorithms, Machine Learning, Robust Optimization</title>
-
-    <meta name="description" content="Georgii Melidi – PhD in Computer Science from Sorbonne Université (LIP6). Research in algorithms, machine learning, and robust optimization.">
-
-    <meta name="author" content="Georgii Melidi">
-
-    <!-- Open Graph (for LinkedIn, etc.) -->
-    <meta property="og:title" content="Georgii Melidi – Algorithms, AI, Robust Optimization">
-    <meta property="og:description" content="PhD in Computer Science from Sorbonne Université (LIP6). Research in algorithms, machine learning, and robust optimization.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gmelidi.com">
-    <meta property="og:image" content="https://gmelidi.com/profile_pic.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Georgii Melidi — Data Science, Machine Learning & Optimization</title>
+  <meta name="description" content="Data scientist and PhD in Computer Science from Sorbonne University. Applied machine learning, robust optimization, and algorithms under uncertainty.">
+  <meta name="author" content="Georgii Melidi">
+  <link rel="canonical" href="https://gmelidi.com/">
+  <meta property="og:title" content="Georgii Melidi — Data Science, Machine Learning & Optimization">
+  <meta property="og:description" content="Data scientist and PhD in Computer Science from Sorbonne University. Applied machine learning, robust optimization, and algorithms under uncertainty.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gmelidi.com/">
+  <meta property="og:image" content="https://gmelidi.com/profile_pic.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js"></script>
+  <link rel="alternate" hreflang="en" href="https://gmelidi.com/">
+  <link rel="alternate" hreflang="fr" href="https://gmelidi.com/fr/">
+  <link rel="alternate" hreflang="ru" href="https://gmelidi.com/ru/">
+  <link rel="alternate" hreflang="x-default" href="https://gmelidi.com/">
 </head>
-<style>
-    :root {
-        --background-color: #ffffff;
-        --text-color: #333;
-        --header-footer-bg: #f4f4f4;
-        --nav-bg: #0056b3;
-        --nav-text-color: white;
-        --link-color: #0056b3;
-    }
-
-    .dark-theme {
-        --background-color: #121212;
-        --text-color: #e0e0e0;
-        --header-footer-bg: #333;
-        --nav-bg: #1a73e8;
-        --nav-text-color: #e0e0e0;
-        --link-color: #FFD700;
-    }
-
-    body {
-        background-color: var(--background-color);
-        color: var(--text-color);
-        font-family: monospace;
-        margin: 0;
-        padding: 0;
-    }
-
-    header, footer {
-        background-color: var(--header-footer-bg);
-        padding: 1em;
-        text-align: center;
-    }
-
-    nav {
-        background-color: var(--nav-bg);
-        padding: 0.5em;
-        text-align: center;
-    }
-
-    nav a {
-        color: var(--nav-text-color);
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-    }
-
-    a {
-        color: var(--link-color);
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    main {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 1em;
-    }
-
-    h1, h2 {
-        color: #0056b3;
-    }
-
-    .language-switch {
-        text-align: right;
-        margin-top: -30px;
-        margin-bottom: 20px;
-    }
-
-    .content {
-        display: none;
-    }
-
-    .visible {
-        display: block;
-    }
-
-    .profile-pic {
-        width: 250px;
-        height: auto;
-        border-radius: 10px;
-        object-fit: cover;
-        margin-bottom: 1em;
-    }
-
-    #about {
-        display: flex;
-        align-items: center;
-    }
-
-    .about-text {
-        margin-left: 20px;
-        max-width: 600px;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-
-    li {
-        margin-bottom: 0.5em;
-    }
-
-    @media (max-width: 768px) {
-        header, footer {
-            padding: 0.5em;
-            text-align: left; 
-        }
-        
-        nav a {
-            display: block;
-            margin: 10px 0;
-            text-align: left;
-        }
-
-        .language-switch {
-            text-align: left;
-            margin: 10px 0;
-        }
-        
-        main {
-            padding: 0.5em;
-            text-align: left; 
-        }
-        
-        h1 {
-            font-size: 1.5em;
-        }
-
-        #about {
-            display: flex;
-            flex-direction: column; 
-            align-items: center;
-            text-align: left;
-        }
-
-        .profile-pic {
-            width: 200px; 
-            margin-right: 0;
-            margin-bottom: 10px;
-        }
-
-        .about-text {
-            margin-left: 0;
-            max-width: 100%;
-        }
-    }
-        #news ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-
-        #news li {
-            margin-bottom: 0.7em;
-        }
-</style>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
-    <script>
-        function switchLanguage(lang) {
-            document.querySelectorAll('.content').forEach(div => div.classList.remove('visible'));
-            document.getElementById(`${lang}-content`).classList.add('visible');
-            document.querySelectorAll('.nav-bar').forEach(nav => nav.style.display = 'none');
-            document.getElementById(`${lang}-nav`).style.display = 'block';
-        }
-        
-        function toggleAbstract(id) {
-            var element = document.getElementById(id);
-            element.style.display = (element.style.display === "none" || element.style.display === "") ? "block" : "none";
-        }
-        function toggleTheme() {
-            document.body.classList.toggle("dark-theme");
-            const themeIcon = document.getElementById("theme-icon");
-            themeIcon.textContent = document.body.classList.contains("dark-theme") ? "🌞" : "🌙";
-        }
-    </script>
-</head>
-<body onload="switchLanguage('en')">
-
-<header>
-    <h1>Georgii Melidi</h1>
-
-    <p>
-        PhD in Computer Science — Sorbonne Université (LIP6)
-    </p>
-
-    <p>
-        Algorithms · Machine Learning · Robust Optimization
-    </p>
-
-    <p>
-        Paris, France |
-        <a href="mailto:georgii.melidi@gmail.com">georgii.melidi@gmail.com</a> |
-        <a href="files/CV_1704.pdf">CV</a> |
-        <a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&hl=en&oi=ao" target="_blank">Google Scholar</a> |
-        <a href="https://github.com/georgiimelidi" target="_blank">GitHub</a>
-    </p>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="brand">Georgii Melidi</h1>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#publications">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="files/CV_Georgii_Melidi.pdf">CV</a>
+    </nav>
+    <div class="header-controls">
+      <details class="language-menu">
+        <summary aria-label="Choose language">EN</summary>
+        <nav class="language-nav" aria-label="Language"><a href="index.html" lang="en" hreflang="en" aria-current="page">English</a><a href="fr/index.html" lang="fr" hreflang="fr">Français</a><a href="ru/index.html" lang="ru" hreflang="ru">Русский</a></nav>
+      </details>
+      <button class="theme-toggle" type="button" aria-label="Switch theme">🌙</button>
+    </div>
+  </div>
 </header>
 
-<div class="language-switch">
-    <button onclick="toggleTheme()" id="theme-icon" style="font-size: 1.2em; background: none; border: none; cursor: pointer;">🌙</button>
-</div>
-
-<nav id="en-nav" class="nav-bar">
-    <a href="#about">About Me</a>
-    <a href="#news">News</a>
-    <a href="#short-cv">Short CV</a>
-    <a href="#publications">Publications</a>
-    <a href="#awards">Honors & Awards</a>
-    <a href="#experience">Experience</a>
-    <a href="projects.html">Projects</a>
-    <a href="#life">Life</a>
-</nav>
-
-<main>
-<div id="en-content" class="content visible">
-    <section id="about">
-        <img src="profile_pic.jpg" alt="Profile picture of Georgii Melidi" class="profile-pic">
-        <div class="about-text">
-            <h2>About Me</h2>
-            <p>
-                Hello 👋! I recently completed my PhD in Computer Science at Sorbonne Université in Paris. 
-                My thesis, titled <em>"Algorithms Under Uncertainty: Robust Methods and Decision-Theoretic Evaluation"</em>, 
-                was carried out at <a href="https://www.lip6.fr/?LANG=en">LIP6</a> within the Operations Research group 
-                (<a href="https://www.lip6.fr/recherche/team.php?id=320&LANG=en">RO</a>). 
-                My research explores how algorithms can integrate machine learning predictions while maintaining 
-                robust performance guarantees. In particular, I work on learning-augmented algorithms, 
-                robust optimization, and decision-theoretic evaluation of algorithms.
-            </p>
-            <p>
-                I was fortunate to conduct my PhD under the supervision of 
-                <a href="https://perso.lip6.fr/Spyros.Angelopoulos/">Spyros Angelopoulos</a> and 
-                <a href="https://perso.lip6.fr/Christoph.Durr/">Christoph Dürr</a>.
-            </p>
-            <p>
-                Before moving to Paris, I completed both my Bachelor’s and Master’s degrees in Applied Mathematics 
-                and Informatics at Novosibirsk State University, where I had the privilege of working under the 
-                supervision of 
-                <a href="https://scholar.google.com/citations?user=kPNu4FIAAAAJ&hl">Adil Erzin</a>. 
-                His mentorship strongly influenced my interest in algorithms and optimization.
-            </p>
-        </div>
-    </section>
-</div>
-
-<section id="news">
-    <h2>News</h2>
-    <ul>
-        <li><strong>2026</strong> – Paper accepted to ICLR 2026: <em>Decision-Theoretic Approaches in Learning-Augmented Algorithms</em>.</li>
-	<li><strong>2025</strong> – Completed PhD in Computer Science at Sorbonne Université (LIP6).</li>
-        <li><strong>2025</strong> – Paper published at AAAI 2025: <em>Scenario-Based Robust Optimization of Tree Structures</em>.</li>
-    </ul>
-</section>
-
-<section id="short-cv">
-    <h2>Short CV</h2>
-    <ul>
-        <li><strong>PhD in Computer Science, Sorbonne Université – LIP6</strong><br>
-            &emsp;October 2022 – September 2025<br>
-            &emsp;Team: RO (Operations Research)<br>
-            &emsp;Thesis: <em>"Algorithms Under Uncertainty: Robust Methods and Decision-Theoretic Evaluation"</em>
-        </li>
-
-        <li><strong>Master of Science, Novosibirsk State University</strong><br>
-            &emsp;September 2020 – July 2022<br>
-            &emsp;Applied Mathematics and Informatics<br>
-            &emsp;Chair of Theoretical Cybernetics
-        </li>
-
-        <li><strong>Bachelor of Science, Novosibirsk State University</strong><br>
-            &emsp;September 2016 – July 2020<br>
-            &emsp;Applied Mathematics and Informatics<br>
-            &emsp;Chair of Theoretical Cybernetics
-        </li>
-    </ul>
-</section>
-
-        <section id="publications">
-            <h2>Publications</h2>
-            <ul style="list-style-type: none; padding-left: 0; line-height: 1.6;">
-
-                <li>
-                <p><strong>Algorithms Under Uncertainty: Robust Methods and Decision-Theoretic Evaluation</strong><br>
-                &emsp;PhD Thesis, Sorbonne Université, 2025. [<a href="https://theses.hal.science/tel-05351852v1/document">pdf</a>, 
-                    <a href="files/PhD_Defense.pdf">slides</a>]
-                </p>
-                </li>
-
-                <li>
-  			 <p><strong>Decision-Theoretic Approaches in Learning-Augmented Algorithms</strong><br>
-  			  &emsp;with Spyros Angelopoulos and Christoph Dürr. International Conference on Learning Representations (ICLR), 2026.
-  			  [<a href="https://arxiv.org/pdf/2501.17701">paper</a>, 
-                    <a href="files/ICLR26_poster1.pdf">poster</a>,
-                    <a href="files/DecisionTheoreticApproachesLAA_Melidi_1107galac.pdf">slides</a>]</p>
-		</li>
-                <li>
-                    <p><strong>Scenario-Based Robust Optimization of Tree Structures</strong><br>
-                    &emsp;with Spyros Angelopoulos, Christoph Dürr, and Alex Elenter. The 39th Annual AAAI Conference on Artificial Intelligence (AAAI), 2025.
-                    [<a href="https://arxiv.org/pdf/2408.11422">paper</a>, 
-                    <a href="files/AAA25_poster_FINAL.pdf">poster</a>]
-                </li>
-                
-                <li>
-                    <p><strong>A 4/3OPT + 2/3 Approximation for big two-bar charts packing problem</strong><br>
-                    &emsp;with Adil Erzin, Alexander Kononov, and Stepan Nazarenko. <em>Journal of Mathematical Sciences</em>, 2023.
-                    [<a href="https://arxiv.org/pdf/2212.00944">paper</a>]
-                </li>
-                
-                <li>
-                    <p><strong>A Posteriori Analysis of the Algorithms for Two-Bar Charts Packing Problem</strong><br>
-                    &emsp;with Adil Erzin, Stepan Nazarenko, and Roman Plotnikov. <em>Advances in Optimization and Applications</em>. OPTIMA 2021.
-                    [<a href="https://doi.org/10.1007/978-3-030-92711-0_14">paper</a>, 
-                    <a href="files/OPTIMA21_Melidi.pdf">slides</a>]
-                </li>
-                
-                <li>
-                    <p><strong>A 3/2-approximation for big two-bar charts packing</strong><br>
-                    &emsp;with Adil Erzin, Stepan Nazarenko, and Roman Plotnikov. <em>Journal of Combinatorial Optimization</em>, 2021.
-                    [<a href="https://arxiv.org/pdf/2006.10361">paper</a>]
-                </li>
-                
-                <li>
-                    <p><strong>Two-Bar Charts Packing Problem</strong><br>
-                    &emsp;with Adil Erzin, Stepan Nazarenko, and Roman Plotnikov. <em>Optimization Letters</em>, 2020.
-                    [<a href="https://arxiv.org/pdf/2005.14195">paper</a>]
-                </li>
-                
-                <li>
-                    <p><strong>Optimal Investment in the Development of Oil and Gas Field</strong><br>
-                    &emsp;with Adil Erzin, Roman Plotnikov, Alexei Korobkin, and Stepan Nazarenko. <em>Mathematical Optimization Theory and Operations Research</em>. MOTOR 2020.
-                    [<a href="https://arxiv.org/pdf/2005.14523">paper</a>, 
-                    <a href="files/Gazfield Optimization MELIDI 17.05.21.pdf">slides</a>]
-                </li>
-            </ul>
-        </section>
-
-        <section id="experience">
-            <h2>Work Experience & Projects </h2>
-            <ul>
-                <li>
-                    <strong>Personal ML and software projects</strong><br>
-                    &emsp;A selection of applied machine learning, reinforcement learning, and interactive software projects is available on the <a href="projects.html">Projects page</a>.
-                </li>
-
-		        <li>
-            		<strong>ANR Predictions: Algorithms with Predictions</strong> - Member
-            		<a href="https://sites.google.com/view/anr-predictions" target="_blank">(Project Details)</a>
-           		    <em>(October 2023 - Currently)</em>
-        	    </li>
-
-                <li><strong>Algorithm Development for Gas Processing and Transport Optimization</strong> (Gazpromneft STC, Summer 2020)<br>
-                    &emsp;Designed a cost-minimization algorithm for gas processing and transport in a gas field, leveraging metaheuristics and advanced optimization techniques to improve operational efficiency.
-		        </li>
-
-                <li><strong> Junior back-end developer (Internship)</strong>, Center of Financial Technologies (CFT), Summer 2019<br>
-                    &emsp;Focused on bank transaction prediction using Machine learning (ML) and Natural language processing (NLP).
-                </li>
-            </ul>
-        </section>
-
-<section id="awards">
-            <h2>Honors & Awards</h2>
-            <ul>
-                <li>"The most useful and promising research" award at the <a href="http://sobolevmath.tilda.ws/snm/tpost/55ngesyoo1-molodie-matematiki-sdelali-dokladi-na-ko">Sobolev Institute of Mathematics competition</a> for the research talk "Approximate algorithms for the Two-Bar Charts Packing Problem" (2021).</li>
-            </ul>
-        </section>
-
-        <section id="life">
-            <h2>Life</h2>
-<p>
-Outside of research, I enjoy staying active. I train CrossFit and also spend time running, cycling, and swimming, 
-and occasionally share some of these activities on 
-<a href="https://www.strava.com/athletes/75617922" target="_blank">Strava</a>. 
-Each of these sports has its own charm, although CrossFit probably wins when it comes to making you question your life choices during a workout.
-</p>
-
-<p>
-At some point I would like to try a triathlon. For now, I’m still in the phase of trying to get reasonably good at the three disciplines separately before combining them all together.
-</p>
-
-<p>
-Feel free to reach out if you would like to talk about research, sports, or potential collaborations.
-</p>
-        </section>
+<div class="hero">
+  <div class="container hero-inner">
+    <img class="profile-pic" src="assets/profile.webp" width="440" height="528" alt="Georgii Melidi in Paris" fetchpriority="high">
+    <div class="hero-copy">
+      <p class="hero-description"><strong>Hello 👋!</strong> I’m a computer scientist based in Paris. I completed my PhD at Sorbonne University, focusing on algorithms under uncertainty.</p>
+      <p class="hero-description">My research explores how algorithms can benefit from machine learning predictions and still perform well when those predictions are wrong. I also enjoy working on personal projects — you can find a few below.</p>
+      <p class="hero-meta">Algorithms · Machine learning · Robust optimization</p>
+      <div class="actions">
+        <a class="button button-primary" href="files/CV_Georgii_Melidi.pdf">Download CV</a>
+        <a class="button" href="mailto:georgii.melidi@gmail.com">Email me</a>
+        <a class="button" href="https://github.com/georgiimelidi">GitHub</a>
+      </div>
     </div>
+  </div>
+</div>
+<main id="main" class="container">
+  <section id="publications">
+    <div class="section-heading"><h2>Selected research</h2><a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&amp;hl=en">Google Scholar</a></div>
+    <p class="section-intro">Learning-augmented algorithms, robust optimization, and decision-making under uncertainty.</p>
+    <ul class="publication-list">
+      <li>
+        <span class="tag">ICLR 2026</span>
+        <h3>Decision-Theoretic Approaches for Improved Learning-Augmented Algorithms</h3>
+        <p class="publication-meta">With Spyros Angelopoulos and Christoph Dürr.</p>
+        <div class="publication-links"><a href="https://arxiv.org/pdf/2501.17701">Paper</a><a href="files/ICLR26_poster1.pdf">Poster</a><a href="files/DecisionTheoreticApproachesLAA_Melidi_1107galac.pdf">Slides</a></div>
+      </li>
+      <li>
+        <span class="tag">AAAI 2025</span>
+        <h3>Scenario-Based Robust Optimization of Tree Structures</h3>
+        <p class="publication-meta">With Spyros Angelopoulos, Christoph Dürr, and Alex Elenter.</p>
+        <div class="publication-links"><a href="https://arxiv.org/pdf/2408.11422">Paper</a><a href="files/AAA25_poster_FINAL.pdf">Poster</a></div>
+      </li>
+    </ul>
+    <details><summary>PhD thesis &amp; earlier publications</summary><ul class="publication-list"><li><p><strong>Algorithms Under Uncertainty: Robust Methods and Decision-Theoretic Evaluation</strong><br>
+                PhD Thesis, Sorbonne University, 2025. [<a href="https://theses.hal.science/tel-05351852v1/document">pdf</a>, 
+                    <a href="files/PhD_Defense.pdf">slides</a>]
+                </p></li>
+<li><p><strong>A 4/3OPT + 2/3 Approximation for big two-bar charts packing problem</strong><br>
+                    with Adil Erzin, Alexander Kononov, and Stepan Nazarenko. <em>Journal of Mathematical Sciences</em>, 2023.
+                    [<a href="https://arxiv.org/pdf/2212.00944">paper</a>]</p></li>
+<li><p><strong>A Posteriori Analysis of the Algorithms for Two-Bar Charts Packing Problem</strong><br>
+                    with Adil Erzin, Stepan Nazarenko, and Roman Plotnikov. <em>Advances in Optimization and Applications</em>. OPTIMA 2021.
+                    [<a href="https://doi.org/10.1007/978-3-030-92711-0_14">paper</a>, 
+                    <a href="files/OPTIMA21_Melidi.pdf">slides</a>]</p></li>
+<li><p><strong>A 3/2-approximation for big two-bar charts packing</strong><br>
+                    with Adil Erzin, Stepan Nazarenko, and Roman Plotnikov. <em>Journal of Combinatorial Optimization</em>, 2021.
+                    [<a href="https://arxiv.org/pdf/2006.10361">paper</a>]</p></li>
+<li><p><strong>Two-Bar Charts Packing Problem</strong><br>
+                    with Adil Erzin, Stepan Nazarenko, and Roman Plotnikov. <em>Optimization Letters</em>, 2020.
+                    [<a href="https://arxiv.org/pdf/2005.14195">paper</a>]</p></li>
+<li><p><strong>Optimal Investment in the Development of Oil and Gas Field</strong><br>
+                    with Adil Erzin, Roman Plotnikov, Alexei Korobkin, and Stepan Nazarenko. <em>Mathematical Optimization Theory and Operations Research</em>. MOTOR 2020.
+                    [<a href="https://arxiv.org/pdf/2005.14523">paper</a>, 
+                    <a href="files/Gazfield Optimization MELIDI 17.05.21.pdf">slides</a>]</p></li></ul></details>
+  </section>
+  <section id="projects">
+    <div class="section-heading"><h2>Personal projects</h2><a href="projects.html">All projects</a></div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <span class="tag">Reinforcement learning</span>
+        <h3>RL Dynamic Pricing</h3>
+        <p>A stochastic pricing simulator and a PyTorch DQN, evaluated against fixed-price and heuristic baselines under changing demand.</p>
+        <a class="card-link" href="projects.html#rl-dynamic-pricing">More about this project</a>
+      </article>
+      <article class="feature-card">
+        <span class="tag">Machine learning · Sports analytics</span>
+        <h3>CourtSense AI</h3>
+        <p>Tennis match prediction and tournament simulation, combining Elo and ranking features, similar-match retrieval, and contextual analysis agents.</p>
+        <a class="card-link" href="projects.html#courtsense-ai">More about this project</a>
+      </article>
+    </div>
+  </section>
+  <section id="experience">
+    <div class="section-heading"><h2>Experience</h2><a href="files/CV_Georgii_Melidi.pdf">Full CV</a></div>
+    <ul class="timeline">
+      <li><span class="date">2022–2025</span><div><h3>Sorbonne University / CNRS LIP6</h3><p class="role">PhD Researcher · Operations Research</p><p>I researched learning-augmented algorithms and robust optimization. My work involved designing and analysing algorithms, running experiments to compare their performance, writing papers with collaborators, and presenting our results in talks.</p></div></li>
+      <li><span class="date">2020–2022</span><div><h3>Gazprom Neft Science and Technology Centre</h3><p class="role">Algorithm Development · Alongside Master’s studies</p><p>Developed optimization heuristics for gas processing and transport networks subject to operational constraints.</p></div></li>
+      <li><span class="date">2019–2020</span><div><h3>Center of Financial Technologies</h3><p class="role">Data Science Intern · Novosibirsk</p><p>Used Python and NLP to predict a structured banking-transaction field, from preprocessing and feature extraction through classification and evaluation.</p></div></li>
+      <li><span class="date">2019–2025</span><div><h3>Level Up Computer Club</h3><p class="role">Co-founder &amp; Managing Director · Novosibirsk</p><p>Managed pricing, budgets, capacity, and daily operations, working directly with customers and staff to understand service needs and resolve operational problems.</p></div></li>
+    </ul>
+  </section>
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about-grid">
+      <div>
+        <p>I hold a PhD in Computer Science from Sorbonne University, where I worked in the <a href="https://www.lip6.fr/recherche/team.php?id=320&amp;LANG=en">Operations Research group at LIP6</a> under the supervision of <a href="https://perso.lip6.fr/Spyros.Angelopoulos/">Spyros Angelopoulos</a> and <a href="https://perso.lip6.fr/Christoph.Durr/">Christoph Dürr</a>.</p>
+        <p>Before moving to Paris, I completed my Bachelor’s and Master’s degrees in Applied Mathematics and Informatics at Novosibirsk State University under the supervision of <a href="https://scholar.google.com/citations?user=kPNu4FIAAAAJ&amp;hl=en">Adil Erzin</a>. I’m grateful for his guidance, which helped shape my interest in algorithms and optimization.</p>
+        <p>I enjoy testing assumptions, turning ideas into code, and explaining results clearly.</p>
+        <div id="short-cv"><h3>Education</h3><p class="small"><strong>PhD, Computer Science</strong><br>Sorbonne University / LIP6 · 2022–2025</p><p class="small"><strong>MSc &amp; BSc, Applied Mathematics and Informatics</strong><br>Novosibirsk State University · 2016–2022</p></div>
+      </div>
+      <div>
+        <h3>Tools &amp; methods</h3>
+        <ul class="skills"><li>Python</li><li>SQL</li><li>C++</li><li>pandas / NumPy</li><li>SciPy / Matplotlib</li><li>scikit-learn</li><li>PyTorch</li><li>Hugging Face</li><li>Gurobi / CPLEX</li><li>Git / Docker</li><li>Streamlit</li></ul>
+        <p class="small">Robust and combinatorial optimization, simulation, feature engineering, embeddings, retrieval, and reproducible experiments.</p>
+        <h3>Languages</h3><p class="small">English (fluent) · French (intermediate) · Russian (native)</p>
+        <h3>Research collaboration</h3><p class="small">Member of <a href="https://sites.google.com/view/anr-predictions">ANR Predictions: Algorithms with Predictions</a>, starting in October 2023.</p>
+      </div>
+    </div>
+  </section>
+  <section id="news">
+    <h2>Recent highlights</h2>
+    <ul class="news-list">
+      <li><strong>2026</strong><span>Participated in the Teads Data Science Summer School: applied ML, experimentation, and model evaluation.</span></li>
+      <li><strong>2026</strong><span>Paper accepted to <a href="#publications">ICLR 2026</a>.</span></li>
+      <li><strong>2025</strong><span>Completed my PhD at Sorbonne University; paper published at AAAI 2025.</span></li>
+    </ul>
+    <div id="awards"><p class="small">Previously: “The most useful and promising research” award at the <a href="http://sobolevmath.tilda.ws/snm/tpost/55ngesyoo1-molodie-matematiki-sdelali-dokladi-na-ko">Sobolev Institute of Mathematics competition</a> for my talk on the Two-Bar Charts Packing Problem (2021).</p></div>
+  </section>
+  <section id="life">
+    <h2>Life outside research</h2>
+    <p class="section-intro">I train CrossFit and also enjoy running, cycling, and swimming. Each has its charm, although CrossFit probably wins when it comes to making me question my life choices during a workout. I’d like to try a triathlon someday; for now, I’m working on the three disciplines separately. You can find some of my activities on <a href="https://www.strava.com/athletes/75617922">Strava</a>.</p>
+    <p>Feel free to reach out if you’d like to talk about research, projects, or sports. <a href="mailto:georgii.melidi@gmail.com">Let’s talk.</a></p>
+  </section>
 </main>
-
-<footer>
-    <p>
-        &copy; 2024–2026 Georgii Melidi |
-        Last updated: <span id="last-updated"></span>
-    </p>
-
-    <a href="https://info.flagcounter.com/VOkF">
-        <img src="https://s11.flagcounter.com/mini/VOkF/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Flag Counter" border="0">
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Georgii Melidi · Updated: <time datetime="2026-10-11">11 October 2026</time></span>
+    <div class="footer-links">
+      <a href="mailto:georgii.melidi@gmail.com">Email</a>
+      <a href="https://github.com/georgiimelidi">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=b8Qm8XlpK_4C&amp;hl=en">Scholar</a>
+    </div>
+  </div>
+  <div class="container flag-counter">
+    <a href="https://info.flagcounter.com/VOkF" aria-label="Visitor flag counter">
+      <img src="https://s11.flagcounter.com/mini/VOkF/bg_FFFFFF/txt_000000/border_CCCCCC/flags_0/" alt="Visitor flag counter" loading="lazy">
     </a>
+  </div>
 </footer>
-
-<script>
-document.getElementById("last-updated").textContent =
-new Date(document.lastModified).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-});
-</script>
-
 </body>
 </html>
